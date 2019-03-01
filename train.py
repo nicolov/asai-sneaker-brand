@@ -4,6 +4,7 @@
 # https://gist.github.com/fchollet/7eb39b44eb9e16e59632d25fb3119975
 # https://www.kaggle.com/c/planet-understanding-the-amazon-from-space/data
 
+import json
 import os
 
 import tensorflow as tf
@@ -41,6 +42,11 @@ def main():
         batch_size=4,
         class_mode="categorical",
     )
+
+    with open('class_indices.json', 'w') as f:
+        json.dump(validation_generator.class_indices, f, indent=2)
+
+    return
 
     tensorboard_cb = tf.keras.callbacks.TensorBoard(log_dir="./tboard_logs")
 

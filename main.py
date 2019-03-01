@@ -41,8 +41,6 @@ def classify(filename):
     with graph.as_default():
         result = predict_file_path(model, image_path)
 
-    result_label = 'dog' if result[0][0] > 0.5 else 'cat'
-
     return """
 <title>Classification result</title>
 <h1>The model says .. {result}</h1>
@@ -57,7 +55,7 @@ def classify(filename):
 </p>
 
 """.format(
-        filename=filename, result=result_label
+        filename=filename, result=result
     )
 
 
