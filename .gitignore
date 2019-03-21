@@ -1,0 +1,12 @@
+__pycache__
+env
+.DS_Store
+/uploads
+/cats-dogs
+/tboard_logs
+*chkpt*
+*.tar
+*.tar.gz
+/imgs_cropped/
+/organized/
+/data/
